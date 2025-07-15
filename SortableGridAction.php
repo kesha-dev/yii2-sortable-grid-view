@@ -1,4 +1,5 @@
 <?php
+
 namespace oonne\sortablegrid;
 
 use Yii;
@@ -42,6 +43,11 @@ class SortableGridAction extends Action
                 "Not found right `SortableGridBehavior` behavior in `{$this->modelName}`."
             );
         }
-        $model->getBehavior($this->behaviorName)->gridSort(Json::decode($items));
+
+        if ($this->behaviorName) {
+            $model->getBehavior($this->behaviorName)->gridSort(Json::decode($items));
+        } else {
+            $model->gridSort(Json::decode($items));
+        }
     }
 }
