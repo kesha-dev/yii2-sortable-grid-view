@@ -19,6 +19,7 @@ use yii\web\BadRequestHttpException;
  *       'sort' => [
  *          'class' => SortableGridAction::className(),
  *          'modelName' => Model::className(),
+ *          'behaviorName'=>'sort',
  *       ],
  *   ];
  * }
@@ -27,6 +28,7 @@ use yii\web\BadRequestHttpException;
 class SortableGridAction extends Action
 {
     public $modelName;
+    public $behaviorName;
 
     public function run()
     {
@@ -40,7 +42,6 @@ class SortableGridAction extends Action
                 "Not found right `SortableGridBehavior` behavior in `{$this->modelName}`."
             );
         }
-
-        $model->gridSort(Json::decode($items));
+        $model->getBehavior($this->behaviorName)->gridSort(Json::decode($items));
     }
 }

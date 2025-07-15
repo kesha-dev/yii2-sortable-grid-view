@@ -2,7 +2,7 @@
 namespace oonne\sortablegrid;
 
 use yii\helpers\Url;
-use yii\grid\GridView;
+use kartik\grid\GridView;
 
 /**
  * Sortable version of Yii2 GridView widget.
