@@ -5,7 +5,7 @@ use yii\web\AssetBundle;
 
 class SortableGridAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/oonne/yii2-sortable-grid-view/assets';
+    public $sourcePath = '@vendor/kesha-dev/sortable/assets';
 
     public $js = [
         'js/jquery.sortable.gridview.js',
